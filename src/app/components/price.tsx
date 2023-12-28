@@ -1,7 +1,7 @@
 "use client"
 
 import styles from "../components/styles/Product.module.css";
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 
 type Props = {
   price: number;
@@ -11,17 +11,33 @@ type Props = {
 
 const Price = ( {price, id, options}: Props) => {
   const [total, setTotal] = useState(price);
-  const [selected, setSelected] = useState(0);
-  const [extras, setExtras] = useState([]);
+  const [extraPrice, setExtrasPrice] = useState(price);
   const [quantity, setQuantity] = useState(1);
+  const [extras, setExtras] = useState([]);
 
   useEffect(() => {
     setTotal(
-      quantity * (options ? price + options[selected].additionalPrice : price)
+      quantity * (options ? extraPrice: price)
     )
-  }), [quantity, selected, options, price]
+  }), [quantity, options, price]
 
+  const changePrice = (additional:number) => {
+    setExtrasPrice((extraPrice + additional));
+  }
 
+  const handleChange = (e: ChangeEvent<HTMLInputElement>, option: { title?: string; additionalPrice: any; }) => {
+    const checked = e.target.checked;
+    if (checked){
+        changePrice(option.additionalPrice);
+        extras.push(option.title);
+        console.log(extras);
+    }else
+    {
+      changePrice(-option.additionalPrice);
+      extras.filter((extra) => extra.title!== option.title);
+      console.log(extras);
+    }
+  }
 
   return (
     <>
@@ -29,12 +45,13 @@ const Price = ( {price, id, options}: Props) => {
     <h3 className={styles.choose}>Choose additional ingredients</h3>
     <div className={styles.ingredients}>
           {options!.map((option, index) => (
-            <div className={styles.option} onClick={()=> setSelected(index)}>
+            <div className={styles.option} key={index}>
               <input
                 type="checkbox"
                 id={option.title}
                 name={option.title}
                 className={styles.checkbox}
+                onChange={(e) => {handleChange(e, option)}}
               />
               <label htmlFor={option.title}>{option.title}</label>
            </div>
