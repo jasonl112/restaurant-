@@ -1,0 +1,44 @@
+.container{
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title{
+  color: black;
+  font-size: 50px;
+  margin-bottom: 0px;
+}
+
+.content{
+  width: 650px;
+  text-align: center;
+  line-height: 25px;
+  font-size: 20px;
+}
+
+.container button{
+  padding: 10px 25px;
+  color: black;
+  background-color: transparent;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: 0.125s;
+  font-family: inherit;
+  margin-bottom: 10px;
+}
+
+.container button:hover{
+  background-color: white;
+  color: black;
+}
+
+.subheader{
+  font-size: 15px;
+}
+
+.container b{
+  font-size: 50px;
+}

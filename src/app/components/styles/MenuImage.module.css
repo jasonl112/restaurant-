@@ -1,0 +1,11 @@
+.container{
+  height: fit-content;
+  padding: 50px 100px;
+  background-color: black;
+}
+
+.imgContainer{
+  height: 1500px;
+  width: 100%;
+  position: relative;
+}

@@ -1,0 +1,12 @@
+.container{
+  background-color:  #F8F5F4;
+  height: 300px;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.googlemap{
+  height: 100%;
+  width: 80%;
+}

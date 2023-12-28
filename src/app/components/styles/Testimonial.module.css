@@ -1,0 +1,70 @@
+.container{
+  height: 500px;
+  background-image: url("/img/testimonial.jpg");
+  background-size: cover;
+  position: relative;
+  background-position: bottom;
+}
+
+.overlay{
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  position: relative;
+
+}
+
+.titleText{
+  position: absolute;
+  color: white;
+  z-index: 1;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+
+.heading{
+  font-size: 20px;
+}
+
+.title{
+  font-size: 60px;
+}
+
+.cardContainer{
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.card{
+  background-color: #1E1810;
+  color: white;
+  width: 400px;
+  height: 275px;
+  border-radius: 15px;
+  position: relative;
+  padding: 10px;
+}
+
+.image{
+  position: absolute;
+  top: -50px;
+  right: 50%;
+  transform: translateX(50%);
+  border: 5px solid white;
+  border-radius: 50%;
+}
+
+.text{
+  padding-top: 20px;
+  line-height: 35px;
+  text-align: center;
+}

@@ -1,0 +1,41 @@
+.container{
+  height: 375px;
+  background-image: url("/img/signature.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.overlay{
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+}
+
+.titleText{
+  color: white;
+  z-index: 1;
+  padding: 20px 300px;
+  width: 600px;
+}
+
+.heading{
+  font-size: 15px;
+}
+
+.title{
+  margin-top: 10px;
+  font-size: 45px;
+  margin-bottom: 0px;
+}
+
+.content{
+  margin-top: 10px;
+  line-height: 25px;
+} 

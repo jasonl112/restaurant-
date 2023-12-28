@@ -1,0 +1,16 @@
+.container{
+  padding: 80px 20px;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.ImgContainer{
+  position: relative;
+  width: 550px;
+  height: 420px;
+  background-color: green;
+  padding: 0;
+}

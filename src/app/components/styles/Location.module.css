@@ -1,0 +1,52 @@
+.container{
+  position: relative;
+  height: fit-content;
+  padding: 50px 400px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 150px;
+}
+
+.image{
+  border: 1px solid black;
+}
+
+.left{
+  width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.right{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.left .item{
+  left: 50%;
+  width: 382px;
+}
+
+.item{
+  left: 50%;
+  width: 520px;
+}
+
+.text{
+  padding: 20px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.text p{
+  line-height: 30px;
+}
+
+.content{
+  font-size: 20px;
+  font-weight: bold;
+}
