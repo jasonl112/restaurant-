@@ -3,8 +3,40 @@ import { menu } from "@/app/data";
 import { specialroll } from "@/app/data";
 import Image from "next/image";
 import Link from "next/link";
+import { MenuType } from "@/types/types";
+import { ProductType } from "@/types/types";
 
-export const CategoryPage = () => {
+const getData = async () => {
+  const res = await fetch("http://localhost:3000/api/categories", {cache:"no-store"});
+
+  if (!res.ok){
+    throw new Error("Failed!");
+  }
+
+  return res.json();
+}
+
+const getProductData = async (category:string) => {
+  const res = await fetch(`http://localhost:3000/api/products?cat=${category}`, {cache:"no-store"});
+
+  if (!res.ok){
+    throw new Error("Failed!");
+  }
+
+  return res.json();
+}
+
+
+type Props = {
+  params:{category:string}
+}
+
+
+export const CategoryPage = async ({params}:Props) => {
+
+  const menu:MenuType = await getData();
+  const products:ProductType[] = await getProductData(params.category);
+
   return(
     <div className={styles.container}>
       <div className={styles.sidebar}>
@@ -26,7 +58,7 @@ export const CategoryPage = () => {
           </div>
         </div>
         <div className={styles.cardsWrapper}>
-        {specialroll.map((item) => (
+        {products.map((item) => (
             <Link href={`/product/${item.id}`} key={item.id}>
             <div className={styles.categoryCard}>
               <div className={styles.imgContainer}>
@@ -41,5 +73,4 @@ export const CategoryPage = () => {
     </div>
   )
 }
-
 export default CategoryPage;

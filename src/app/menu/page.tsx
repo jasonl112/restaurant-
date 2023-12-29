@@ -2,8 +2,21 @@ import styles from "@/components/styles/Menu.module.css";
 import { menu } from "../data";
 import Image from "next/image";
 import Link from "next/link";
+import { MenuType } from "@/types/types";
 
-export const Menu = () => {
+const getData = async () => {
+  const res = await fetch("http://localhost:3000/api/categories", {cache:"no-store"});
+
+  if (!res.ok){
+    throw new Error("Failed!");
+  }
+
+  return res.json();
+}
+
+export const Menu = async () => {
+
+  const menu:MenuType = await getData();
   return(
     <div className={styles.container}>
       <div className={styles.sidebar}>
