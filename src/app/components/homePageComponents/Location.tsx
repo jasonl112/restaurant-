@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Location = () => {
   return(
-    <div className={styles.container}>
+    <div className={styles.container} id="about">
       <div className={styles.left}>
         <div className={styles.header}>
           <h1 className={styles.title}>WElCOME TO KYOTO HIBACHI SUSHI & BAR</h1>

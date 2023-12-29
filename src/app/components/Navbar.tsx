@@ -1,6 +1,6 @@
 import styles from "./styles/Navbar.module.css";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "next/link"
 
 const Navbar = () => {
   return(
@@ -15,19 +15,19 @@ const Navbar = () => {
         </div>
       </div>
       <div className={styles.mainHeader}>
-        <a href="/">
+        <Link href="/">
           <div className={styles.item}>
             <Image src="/img/logo.png" width="200" height="60" alt="logo"></Image>
           </div>
-        </a>
+        </Link>
         <div className={styles.item}>
           <ul className={styles.list}>
-            <li className={styles.listItem}><a href="/">Home</a></li>
-            <li className={styles.listItem}>About Us</li>
-            <li className={styles.listItem}><a href="/">Menu</a></li>
+            <li className={styles.listItem}><Link href="/">Home</Link></li>
+            <li className={styles.listItem}><Link href="/#about">About Us</Link></li>
+            <li className={styles.listItem}><Link href="#menu">Menu</Link></li>
             <li className={styles.listItem}>Contact</li>
-            <li className={styles.listItem}><a href="/contact">Login</a></li>
-            <li className={styles.listItem}><a href="/menu">Order</a></li>
+            <li className={styles.listItem}><Link href="/login">Login</Link></li>
+            <li className={styles.listItem}><Link href="/menu">Order</Link></li>
             <li className={styles.listItem}>
             <Link href="/cart">
               <div className={styles.cart}>
