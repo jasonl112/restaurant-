@@ -29,15 +29,17 @@ const Price = ( {price, id, options}: Props) => {
     const checked = e.target.checked;
     if (checked){
         changePrice(option.additionalPrice);
-        extras.push(option.title);
-        console.log(extras);
-    }else
+        setExtras([...extras, option]);
+    }
+    else
     {
       changePrice(-option.additionalPrice);
-      extras.filter((extra) => extra.title!== option.title);
       console.log(extras);
+      setExtras(extras.filter((extra) => extra.title !== option.title))
     }
   }
+
+  console.log(extras);
 
   return (
     <>
