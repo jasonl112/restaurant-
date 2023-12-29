@@ -1,7 +1,7 @@
-import styles from "../../components/styles/Product.module.css";
+import styles from "@/components/styles/Product.module.css";
 import Image from "next/image";
 import { singleProduct } from "@/app/data";
-import Price from "@/app/components/price";
+import Price from "@/components/price";
 
 const Product = () => {
 

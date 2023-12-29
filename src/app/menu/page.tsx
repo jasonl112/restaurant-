@@ -1,4 +1,4 @@
-import styles from "../components/styles/Menu.module.css";
+import styles from "@/components/styles/Menu.module.css";
 import { menu } from "../data";
 import Image from "next/image";
 import Link from "next/link";
