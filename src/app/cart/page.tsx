@@ -1,4 +1,4 @@
-import styles from "../components/styles/Cart.module.css";
+import styles from "@/components/styles/Cart.module.css";
 import Image from "next/image";
 
 const Cart = () => {

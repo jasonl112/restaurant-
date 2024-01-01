@@ -1,9 +1,28 @@
+"use client"
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import styles from "../../components/styles/Login.module.css"
+import { useSession } from "next-auth/react";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const LoginPage = () => {
+
+  const {data, status} = useSession();
+  const router = useRouter();
+  
+
+  if (status == "loading"){
+    return <p>Loading...</p>
+  }
+  if (status == "authenticated"){
+    router.push("/")
+  }
+  console.log("data: " + data);
+  console.log("status: " + status);
+
   return (
     <div className={styles.container}>
       {/* BOX */}
@@ -16,7 +35,7 @@ const LoginPage = () => {
         <div className={styles.form}>
           <h1 className={styles.title}>Welcome</h1>
           <p>Log into your account or create a new one using social buttons</p>
-          <button className={styles.button}>
+          <button className={styles.button} onClick={()=>signIn("google")}>
             <Image
               src="/img/google.png"
               alt=""

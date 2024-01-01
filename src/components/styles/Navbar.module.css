@@ -36,14 +36,14 @@
   text-decoration: none;
 }
 
-.listItem:nth-child(6){
+.listItem:nth-child(5){
   border: 1px solid white;
   padding: 10px 20px;
   cursor: pointer;
   transition: 0.15s;
 }
 
-.listItem:nth-child(6):hover{
+.listItem:nth-child(5):hover{
   background-color: white;
   color: black;
 }

@@ -1,5 +1,7 @@
+"use client"
+
 import React from "react";
-import styles from "../components/styles/Orders.module.css"
+import styles from "@/components/styles/Orders.module.css"
 
 const OrdersPage = () => {
   return (
