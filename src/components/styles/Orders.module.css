@@ -25,3 +25,27 @@
 .confirmed{
   background-color: hsla(123, 68%, 43%, 0.322);
 }
+
+.unconfirmed{
+  background-color: red;
+}
+
+.input{
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+}
+
+.edit{
+  background-color: lightcoral;
+  border: none;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
