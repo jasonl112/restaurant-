@@ -2,6 +2,7 @@ import styles from "./styles/Navbar.module.css";
 import Image from "next/image";
 import Link from "next/link"
 import UserLinks from "./UserLinks";
+import CartIcon from "./CartIcon";
 
 const Navbar = () => {
   return(
@@ -30,10 +31,7 @@ const Navbar = () => {
             <li className={styles.listItem}><Link href="/menu">Order</Link></li>
             <li className={styles.listItem}>
             <Link href="/cart">
-              <div className={styles.cart}>
-                <Image src="/img/cart.png" width="30" height="30" alt="cart"></Image>
-                <div className={styles.counter}>2</div>
-              </div>
+              <CartIcon/>
             </Link>
             </li>
           </ul>

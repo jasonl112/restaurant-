@@ -3,6 +3,8 @@
 import { ProductType } from "@/types/types";
 import styles from "../components/styles/Product.module.css";
 import { ChangeEvent, useEffect, useState } from "react";
+import { useCartStore } from "@/utils/store";
+import { toast } from "react-toastify";
 
 
 const Price = ( {product}: {product:ProductType}) => {
@@ -12,6 +14,12 @@ const Price = ( {product}: {product:ProductType}) => {
   const [extraPrice, setExtrasPrice] = useState(price);
   const [quantity, setQuantity] = useState(1);
   const [extras, setExtras] = useState([]);
+
+  const {addToCart} = useCartStore();
+
+  useEffect(()=>{
+    useCartStore.persist.rehydrate()
+  },[])
 
   useEffect(() => {
     setTotal(
@@ -38,6 +46,19 @@ const Price = ( {product}: {product:ProductType}) => {
   }
 
   console.log(extras);
+
+  const handleCart = () =>{
+    addToCart(
+      {
+        id: product.id,
+        title: product.title,
+        img: product.img,
+        price: total,
+        options: extras,
+        quantity: quantity,
+      }),
+      toast.success("The product added to the cart");
+  }
 
   return (
     <>
@@ -74,7 +95,7 @@ const Price = ( {product}: {product:ProductType}) => {
                 </button>
               </div>
             </div>
-            <button className={styles.button}>Add to Cart</button>
+            <button className={styles.button} onClick={()=>{handleCart()}}>Add to Cart</button>
         </div>
     </>
   );
