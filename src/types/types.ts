@@ -11,7 +11,7 @@ export type ProductType = {
   desc?: string;
   img?: string;
   price: number;
-  extraOptions?: { title: string; additionalPrice: number }[];
+  options?: { title: string; additionalPrice: number }[];
 };
 
 export type OrderType = {

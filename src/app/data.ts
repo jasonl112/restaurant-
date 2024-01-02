@@ -4,7 +4,7 @@ type Product = {
   desc?: string;
   img?: string;
   price: number;
-  extraOptions?: { title: string; additionalPrice: number }[];
+  options?: { title: string; additionalPrice: number }[];
 };
 
 type Products = Product[];
@@ -16,7 +16,7 @@ export const specialroll: Products = [
     desc: "Ignite your taste buds with a fiery combination of spicy pepperoni, jalapeños, crushed red pepper flakes, and melted mozzarella cheese, delivering a kick with every bite.",
     img: "/img/sushi.jpg",
     price: 14.9,
-    extraOptions: [
+    options: [
       {
         title: "Avocado",
         additionalPrice: 2,
@@ -37,7 +37,7 @@ export const specialroll: Products = [
     desc: "Ignite your taste buds with a fiery combination of spicy pepperoni, jalapeños, crushed red pepper flakes, and melted mozzarella cheese, delivering a kick with every bite.",
     img: "/img/sushi.jpg",
     price: 14.9,
-    extraOptions: [
+    options: [
       {
         title: "Avocado",
         additionalPrice: 2,
@@ -62,7 +62,7 @@ export const singleProduct: Product =
     desc: "Top: asdasdasdas In: aoshdasdhusad",
     img: "/img/sushi.jpg",
     price: 14.90,
-    extraOptions: [
+    options: [
       {
         title: "Avocado",
         additionalPrice: 2,

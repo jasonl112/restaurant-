@@ -1,15 +1,13 @@
 "use client"
 
+import { ProductType } from "@/types/types";
 import styles from "../components/styles/Product.module.css";
 import { ChangeEvent, useEffect, useState } from "react";
 
-type Props = {
-  price: number;
-  id: number;
-  options?: { title: string; additionalPrice: number; }[]
-}
 
-const Price = ( {price, id, options}: Props) => {
+const Price = ( {product}: {product:ProductType}) => {
+
+  const price = Number(product.price);
   const [total, setTotal] = useState(price);
   const [extraPrice, setExtrasPrice] = useState(price);
   const [quantity, setQuantity] = useState(1);
@@ -17,9 +15,9 @@ const Price = ( {price, id, options}: Props) => {
 
   useEffect(() => {
     setTotal(
-      quantity * (options ? extraPrice: price)
+      quantity * (product.options ? extraPrice: price)
     )
-  }), [quantity, options, price]
+  }), [quantity, product.options, price]
 
   const changePrice = (additional:number) => {
     setExtrasPrice((extraPrice + additional));
@@ -43,10 +41,10 @@ const Price = ( {price, id, options}: Props) => {
 
   return (
     <>
-    <span className={styles.price}>{total.toFixed(2)}</span>
+    <span className={styles.price}>{total}</span>
     <h3 className={styles.choose}>Choose additional ingredients</h3>
     <div className={styles.ingredients}>
-          {options!.map((option, index) => (
+          {product.options!.map((option, index) => (
             <div className={styles.option} key={index}>
               <input
                 type="checkbox"
