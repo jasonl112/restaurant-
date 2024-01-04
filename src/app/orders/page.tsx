@@ -75,7 +75,9 @@ const OrdersPage = () => {
             <td className={styles.id}>{item.id}</td>
             <td className={styles.date}>{item.createdAt.toString().slice(0,10)}</td>
             <td className={styles.price}>{item.price}</td>
-            <td className={styles.products}>{item.products[0].title}</td>
+            <td className={styles.products}>{item.products.map((product) => (
+              <span>{product.title}</span>
+            ))}</td>
             {session?.user.isAdmin ? (
               <td>
                 <form className={styles.form} onSubmit={(e)=>handleUpdate(e, item.id)}
